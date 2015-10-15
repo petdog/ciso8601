@@ -25,7 +25,7 @@ static PyObject* _parse(PyObject* self, PyObject* args, int parse_tzinfo)
             Py_RETURN_NONE;
     }
 
-    if (*c == '-') // Optional separator
+    if (*c == '-' || *c == '/') // Optional separator
         c++;
 
     // Month
@@ -36,7 +36,7 @@ static PyObject* _parse(PyObject* self, PyObject* args, int parse_tzinfo)
             Py_RETURN_NONE;
     }
 
-    if (*c == '-') // Optional separator
+    if (*c == '-' || *c == '/') // Optional separator
         c++;
 
     // Day
