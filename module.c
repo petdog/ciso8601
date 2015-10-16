@@ -212,7 +212,7 @@ static PyMethodDef CISO8601Methods[] =
 #if PY_MAJOR_VERSION >= 3
 static struct PyModuleDef moduledef = {
     PyModuleDef_HEAD_INIT,
-    "ciso8601",
+    "fciso8601",
     NULL,
     -1,
     CISO8601Methods,
@@ -225,16 +225,16 @@ static struct PyModuleDef moduledef = {
 
 PyMODINIT_FUNC
 #if PY_MAJOR_VERSION >= 3
-PyInit_ciso8601(void)
+PyInit_fciso8601(void)
 #else
-initciso8601(void)
+initfciso8601(void)
 #endif
 {
     PyObject* pytz;
 #if PY_MAJOR_VERSION >= 3
     PyObject *module = PyModule_Create(&moduledef);
 #else
-    (void) Py_InitModule("ciso8601", CISO8601Methods);
+    (void) Py_InitModule("fciso8601", CISO8601Methods);
 #endif
     PyDateTime_IMPORT;
     pytz = PyImport_ImportModule("pytz");
